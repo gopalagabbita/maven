@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: true
+  tasks:
+   - name: install apache server
+     yum: name=httpd state=latest
+   - name: to restart server
+     service:
+       name: httpd 
+       state: restarted
+   - name: copy file
+     copy:
+      src: index.html
+      dest: /var/www/html/index.html
