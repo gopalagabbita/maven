@@ -1,0 +1,3 @@
+mvn install
+mvn execute
+mvn deploy
